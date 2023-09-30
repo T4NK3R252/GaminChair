@@ -20,7 +20,7 @@ local function CreateHighlightPart(player)
     surfaceGui.Parent = highlight
 
     local frame = Instance.new("Frame")
-    frame.Size = UDim2.new(5, 0, 10, 0)
+    frame.Size = UDim2.new(1, 0, 1, 0)
     frame.BackgroundTransparency = 1
     frame.Parent = surfaceGui
 
