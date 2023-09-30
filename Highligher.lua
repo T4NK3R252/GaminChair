@@ -1,31 +1,31 @@
--- Define a function to highlight a player
-local function HighlightPlayer(player)
-    -- Create a new part to represent the highlight
-    local highlight = Instance.new("Part")
-    highlight.Anchored = true
-    highlight.CanCollide = false
-    highlight.Size = player.Character.HumanoidRootPart.Size * 1.2 -- Adjust the size as needed
-    highlight.BrickColor = BrickColor.new("Bright red") -- Change the color as desired
-    highlight.Transparency = 0.5 -- Adjust the transparency as desired
+-- Function to create a highlight UI for a player
+local function CreateHighlightUI(player)
+    local playerGui = player:WaitForChild("PlayerGui")
+    
+    -- Create a BillboardGui
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Size = UDim2.new(1, 0, 1, 0)
+    billboardGui.Adornee = player.Character.Head
+    billboardGui.Parent = playerGui
 
-    -- Attach the highlight to the player's character
-    highlight.CFrame = player.Character.HumanoidRootPart.CFrame
-    highlight.Parent = workspace
-
-    -- Remove the highlight after a certain duration (e.g., 5 seconds)
-    wait(5)
-    highlight:Destroy()
+    -- Create a Frame to represent the highlight
+    local highlightFrame = Instance.new("Frame")
+    highlightFrame.Size = UDim2.new(1.5, 0, 1.5, 0) -- Adjust the size as needed
+    highlightFrame.Position = UDim2.new(-0.25, 0, -0.25, 0)
+    highlightFrame.BackgroundColor3 = Color3.new(1, 0, 0) -- Change the color as desired
+    highlightFrame.BackgroundTransparency = 0.5 -- Adjust the transparency as desired
+    highlightFrame.Parent = billboardGui
 end
 
--- Function to highlight all players
-local function HighlightAllPlayers()
+-- Function to create highlight UI for all players
+local function CreateHighlightUIForAllPlayers()
     for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-        HighlightPlayer(player)
+        CreateHighlightUI(player)
     end
 end
 
--- Run the HighlightAllPlayers function periodically (e.g., every 10 seconds)
-while true do
-    HighlightAllPlayers()
-    wait(10) -- Adjust the interval as desired
-end
+-- Run the CreateHighlightUIForAllPlayers function when a player joins the game
+game:GetService("Players").PlayerAdded:Connect(CreateHighlightUI)
+
+-- You can also run it for existing players when the script starts
+CreateHighlightUIForAllPlayers()
