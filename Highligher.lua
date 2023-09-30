@@ -28,7 +28,7 @@ local function CreateHighlightPart(player)
     highlight.CFrame = character.HumanoidRootPart.CFrame
 
     -- Remove the highlight after a certain duration (e.g., 5 seconds)
-    wait(5)
+    wait(0.1)
     highlight:Destroy()
 end
 
@@ -42,5 +42,5 @@ end
 -- Run the CreateHighlightPartsForAllPlayers function periodically (e.g., every 10 seconds)
 while true do
     CreateHighlightPartsForAllPlayers()
-    wait(10) -- Adjust the interval as desired
+    wait(0.1) -- Adjust the interval as desired
 end
