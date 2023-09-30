@@ -13,7 +13,7 @@ local function CreateHighlightUI(player)
     highlightFrame.Size = UDim2.new(1.5, 0, 1.5, 0) -- Adjust the size as needed
     highlightFrame.Position = UDim2.new(-0.25, 0, -0.25, 0)
     highlightFrame.BackgroundColor3 = Color3.new(1, 0, 0) -- Change the color as desired
-    highlightFrame.BackgroundTransparency = 0.5 -- Adjust the transparency as desired
+    highlightFrame.BackgroundTransparency = 1 -- Adjust the transparency as desired
     highlightFrame.Parent = billboardGui
 end
 
