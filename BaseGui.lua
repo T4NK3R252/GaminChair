@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
-local w = library:CreateWindow("Main") -- Main Window
+local w = library:CreateWindow("Basic") -- Main Window
 
 local b = w:CreateFolder("Highlighter") -- Hghlighter
 
@@ -14,28 +14,26 @@ b:Label("Highlight People",{
 }) 
 
 b:Button("Activate",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/T4NK3R252/GaminChair/main/Highligher.lua"))()
     print("Highlighter Activated")
 end)
 
-b:Toggle("Toggle",function(bool)
-    shared.toggle = bool
-    print(shared.toggle)
+-- b:Toggle("Toggle",function(bool)
+--     shared.toggle = bool
+--     print(shared.toggle)
+-- end)
+
+-- b:DestroyGui()
+
+c:Label("Aim Assist", {
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255, 255, 255);
+    BgColor = Color3.fromRGB(69, 69, 69);
+})
+
+c:Button("Activate",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/T4NK3R252/GaminChair/main/AimAssist.lua"))()
+    print("Aim Assist Activated")
 end)
 
-b:Dropdown("Dropdown",{"A","B","C"},true,function(mob) --true/false, replaces the current title "Dropdown" with the option that t
-    print(mob)
-end)
-
-b:Bind("Bind",Enum.KeyCode.C,function() --Default bind
-    print("Yes")
-end)
-
-b:ColorPicker("ColorPicker",Color3.fromRGB(255,0,0),function(color) --Default color
-    print(color)
-end)
-
-b:Box("Box","number",function(value) -- "number" or "string"
-    print(value)
-end)
-
-b:DestroyGui()
+w:DestroyGui()
