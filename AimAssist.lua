@@ -1,4 +1,4 @@
-local camera = game.CurrentCamera
+local camera = game.workspace.CurrentCamera
 local UIS = game.UserInputService
 
 function getClosest()
@@ -12,13 +12,14 @@ function getClosest()
       end
     end
   end
+  return closestPlayer
 end
 
 UIS.InputBegan:Connect(function(input)
   if input.UserInputType == Enum.UserInputType.LeftShift then
       _G.aim = true
       while wait() do
-        camera.CFrame = CFrame.new(camera.Position, getClosest().Head.Position)
+        camera.CFrame = CFrame.new(camera.CFrame.Position, getClosest().Character.Head.Position)
         if _G.aim == false then return end
   end
 end)
