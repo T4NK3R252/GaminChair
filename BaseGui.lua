@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
-local w = library:CreateWindow("A") -- Creates the window
+local w = library:CreateWindow("Main") -- Creates the window
 
 local b = w:CreateFolder("B") -- Creates the folder(U will put here your buttons,etc)
 
