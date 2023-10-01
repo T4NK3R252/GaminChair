@@ -16,7 +16,7 @@ function getClosest()
 end
 
 UIS.InputBegan:Connect(function(input)
-  if input.UserInputType == Enum.UserInputType.LeftShift then
+  if input.UserInputType == Enum.UserInputType.MouseButton2 then
       _G.aim = true
       while wait() do
         camera.CFrame = CFrame.new(camera.CFrame.Position, getClosest().Character.Head.Position)
@@ -24,6 +24,6 @@ UIS.InputBegan:Connect(function(input)
   end
 end)
 UIS.InputEnded:Connect(function(input)
-  if input.UserInputType == Enum.UserInputType.LeftShift then
+  if input.UserInputType == Enum.UserInputType.MouseButton2 then
         _G.aim = false
 end)
